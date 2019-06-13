@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="form.js"></script>
+
+</head>
+
+<body>
+    <h1>Twitter Directory</h1>
+    <input type="button" id="formTrigger" value="Get AFSCME Updates">
+
+    <div class="main">
+        <div class="filters">
+            <h2>Filter By Region</h2>
+            <input type="button" id="eastButton" class="regionButton js-region-button" value="East">
+            <input type="button" id="westButton" class="regionButton js-region-button" value="West">
+            <input type="button" id="centralButton" class="regionButton js-region-button" value="Central">
+            <input type="button" id="southButton" class="regionButton js-region-button" value="South">
+            <input type="button" id="resetButton" class="resetButton js-reset-button" value="Reset">
+        </div>
+        <div class="twitterList">
+
+        </div>
+    </div>
+
+    <div class="displayForm" id="updatesForm">
+        <form method="post" action="https://actionnetwork.org/forms/test-form-js-class/answers" accept-charset="UTF-8"
+            novalidate="novalidate" id="updates-form" method="get" target="hub-form-iframe" role="form">
+            <h1>Get Updates from AFSCME</h1>
+            <label class="hide">
+                <input type="hidden" value="✓" name="utf8" />
+                <input type="hidden" value="full" name="style" />
+                <input type="checkbox" checked="checked" id="name_optin1" value="100026" name="subscription[group]"
+                    style="display: none" />
+                <input type="hidden" value="100026" name="subscription[sub_group_id]" />
+                <input type="hidden" value="" name="subscription[source]" id="source" />
+                <input type="hidden" value="0" name="iu_text_to_mc" id="iu_text_to_mc" />
+            </label>
+
+            <ul>
+                <li>
+                    <label for="form-first_name"><span class="hide">First Name</span></label>
+                    <input type="input" name="answer[first_name]" id="form-first_name" class="required"
+                        placeholder="First Name*" required />
+                </li>
+                <li>
+                    <label for="form-last_name"><span class="hide">Last Name</span></label>
+                    <input type="input" name="answer[last_name]" id="form-last_name" class="required"
+                        placeholder="Last Name*" required />
+                </li>
+                <li>
+                    <label for="form-email"><span class="hide">Email</span></label>
+                    <input type="input" name="answer[email]" id="form-email" class="validate_email" id="email"
+                        placeholder="Your Personal Email Address*" required />
+                </li>
+                <li>
+                    <label for="form-zip_code"><span class="hide">Zip Code</span></label>
+                    <input type="input" name="answer[zip_code]" class="required zip" id="form-zip_code"
+                        placeholder="Zip Code*" required />
+
+                </li>
+                <li>
+                    <label for="Cell-Phone"><span class="hide">Cell Phone</span></label>
+                    <input type="input" name="Cell Phone" id="Cell-Phone" placeholder="Cell Phone" />
+                </li>
+            </ul>
+
+            <small>By providing your cell phone number you consent to receive calls (including recorded or
+                autodialed calls, or texts) at that number from AFSCME and its affiliated labor, political and
+                charitable organizations on any subject matter. Your carrier’s rates may apply. You may modify
+                your preferences at: <a href="https://www.afscme.org/tcpa"
+                    target="_blank">www.afscme.org/tcpa</a>.</small>
+
+
+            <div class="errorTxt" style="padding:15px; color:red; font-weight:bolder;"></div>
+            <button class="submit-button">Submit</button>
+            <br>
+            <button class="exitButton">Exit</button>
+
+        </form>
+        <iframe style="display:none;" name="hub-form-iframe" src="about:blank"></iframe>
+    </div>
+
+    <div class="thanks">
+        <h2>Thanks! We'll be in touch!</h2>
+        <button class="exitButton">Exit</button>
+    </div>
+</body>
+
+</html>
