@@ -1,7 +1,7 @@
 $(document).ready(function () {
     window.actionNetwork = {};
 
-    jQuery('#updates-form').validate({
+    jQuery('#updatesForm').validate({
         messages: {
             'answer[email]': { email: "Please provide a valid email address", required: "Email is required." },
             'answer[last_name]': { required: "Last name is required" },
@@ -15,7 +15,6 @@ $(document).ready(function () {
         errorElement: "strong",
         errorElement: 'div',
         errorLabelContainer: '.errorTxt',
-        groups: { checks: checkbox_names },
         submitHandler: function (form) {
             window.actionNetwork.data = {
                 person: {
@@ -51,7 +50,7 @@ $(document).ready(function () {
                 done: function (data) { },
                 fail: function (data) { }
             });
-            form.submit();
+            // form.submit();
 
             $('.action').hide();
             $('h1.title').hide();
